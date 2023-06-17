@@ -1,0 +1,147 @@
+<div class="Quiz" >
+  <div class="intro" *ngIf="showintro">
+    <h1 style="color:rgb(27, 85, 57)"><b>QuizQuest</b></h1>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4XJR_phUXKhowXYvGjUGIK0j_ATw1Gfb1RWXyO6YJwQ&usqp=CAU&ec=48665701">
+    <h2 style="color:green"><b>Hey Welcome!</b></h2>
+    <h3 style="color:rgb(10, 42, 10)"><b><marquee>Become a quiz Devil!</marquee></b></h3>
+    <button (click)="showquizinstr()">Lets get Started</button>
+  </div>
+  <div class="inst" *ngIf="showinstructions">
+    <h1 style="color:rgb(16, 70, 16);text-align: center;"> <b>Quiz Instructions</b></h1>
+    <h3 style="color:rgb(28, 151, 42)"><b><marquee>Please read the instructions thoroughly</marquee></b></h3>
+    <ol style="color:rgb(20, 57, 20)">
+      <li>This quiz consists of 10 questions carefully designed to help the users to test their knowledge in the basics of programming.</li>
+      <li>Each question in the quiz is of multiple choice format. Read each question carefully, and click on the button next to move to next question.</li>
+      <li>After responding to a question, click on the "Next Question" button at the bottom to go to the next question.</li>
+      <li>There is no negative marking for incorrect answers. The score gets increased only when you select the correct answer.</li>
+      <li>The total score for the quiz is based on your responses to all questions. If you respond incorrectly to a question or retake a question again and get the correct response, your quiz score will reflect it appropriately. If you are not satisfied with the score you can retake the quiz.</li>
+       </ol>
+ <button (click)="startquiz()">Start Quiz</button>
+
+  </div>
+    <div class="questionstart" *ngIf="next" style="color:rgb(13, 51, 13)">
+    <img class="q" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4XJR_phUXKhowXYvGjUGIK0j_ATw1Gfb1RWXyO6YJwQ&usqp=CAU&ec=48665701">
+
+      <div *ngIf="questionindex<myq.length">
+        <h3>{{questionindex+1}}.
+        {{myq[questionindex].question}}</h3>
+        <p *ngFor="let y of myq[questionindex].options">
+          <label>
+            <input type="radio" [value]="y" [(ngModel)]="selected">{{y}}
+          </label>
+        </p>
+      </div>
+      <button (click)="nextq()" *ngIf="questionindex<myq.length">Next</button>
+      <button (click)="back()" *ngIf=" questionindex!=0 && questionindex<myq.length+1 && questionindex!=10">Back</button>
+
+
+    </div>
+
+    <div *ngIf="questionindex===10 && submitted"  class="submitted">
+      <h2  style="color:green"><b>Completed suceessfully submit to know your score</b></h2>
+       <button (click)="submit()">Submit</button>
+    </div>
+  
+    <div *ngIf="finished" class="score">
+      <h2 style="color:green">Your score <h4>{{score}}</h4></h2>
+      <div *ngIf="score>70">
+        <h3 style="color:green"><b>Hey Top Scorer</b></h3>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5nqb_RV8xe3JlSEmwHEj2eNVBKvBt7kJSD2tYNmRASQ&usqp=CAU&ec=48665701">
+      </div>
+      <div *ngIf="score<70">
+         <h3 style="color:green"><b>No problem better luck next time</b></h3>
+        <img src="https://thumbs.dreamstime.com/b/keep-going-green-wooden-arrow-isolated-white-background-vintage-direction-sign-cracked-peeling-plate-empty-seamless-100250111.jpg">
+      </div><br>
+      <button (click)="restart()">Restart</button>
+    </div>
+    
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!----div class="quiz">
+  <form>
+    <h1><b>Quiz App</b></h1><br>
+    <h4>Welcome to the Quiz. Click the button to start</h4><br>
+    <button (click)="start()">Start</button>
+    <div *ngIf="isQuizStarted && currentquestionindex < questions.length">
+      <h3>{{currentquestion.question}}</h3>
+      <ul>
+        <li *ngFor="let o of currentquestion.options">
+          <label>
+            <input type="radio" [value]="o" [(ngModel)]="selected">{{o}}
+          </label>
+        </li>
+      </ul>
+    </div>
+  </form>
+</div>
+<div>
+  <button (click)="nextQuestion()">Next</button>
+    <div *ngIf="isQuizStarted && currentquestionindex === questions.length">
+      <h3>Thank You For Participating</h3>
+      <p>Quiz Finished</p>
+</div----->

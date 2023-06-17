@@ -1,0 +1,54 @@
+.intro
+{
+    margin-left:300px;
+    margin-right:200px;
+    background-color: rgb(188, 255, 89);
+    text-align: center;
+    padding:50px
+}
+.inst
+{
+    margin-left:300px;
+    margin-right:200px;
+    background-color: rgb(188, 255, 89);
+    padding:50px ;
+}
+.questionstart
+{
+    margin-left:300px;
+    margin-right:200px;
+    background-color: rgb(188, 255, 89);
+    padding:50px ;
+}
+button{
+    background-color: green;
+    color:white;
+    width:120px;
+    height:55px;
+    border-radius: 5px;
+}
+.submitted
+{
+    margin-left:300px;
+    margin-right:200px;
+    background-color: rgb(188, 255, 89);
+    padding:50px ;
+    text-align:center;
+}
+.score
+{
+    margin-left:300px;
+    margin-right:200px;
+    background-color: rgb(188, 255, 89);
+    padding:20px ;
+    text-align:center; 
+}
+img{
+    height:200px;
+    width:150px;
+}
+img.q{
+    height:50px;
+    width:40px;
+    object-position: center top;
+}
